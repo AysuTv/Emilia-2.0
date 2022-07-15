@@ -1,0 +1,3 @@
+
+rootProject.name = "Emilia2"
+
