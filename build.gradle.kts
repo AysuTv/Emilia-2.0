@@ -10,17 +10,22 @@ version = "1.0.0"
 
 repositories {
     mavenCentral()
+    maven("https://jitpack.io")
 }
 
 dependencies {
-    compileOnly(fileTree("lib/"))
-
     //Discord API
-    api("net.dv8tion", "JDA", "5.0.0-alpha.13")
+    implementation("net.dv8tion", "JDA", "5.0.0-alpha.13")
 
     //Logger
-    api("org.slf4j:slf4j-api:1.7.25")
-    api("log4j", "log4j", "1.2.17")
+    implementation("org.slf4j:slf4j-api:1.7.25")
+    implementation("log4j", "log4j", "1.2.17")
+
+    implementation("me.carleslc.Simple-YAML", "Simple-Yaml", "1.7.2")
+
+    api("org.jetbrains:annotations:23.0.0")
+    compileOnly("org.projectlombok:lombok:1.18.24")
+    annotationProcessor("org.projectlombok:lombok:1.18.24")
 }
 
 tasks.withType<KotlinCompile> {

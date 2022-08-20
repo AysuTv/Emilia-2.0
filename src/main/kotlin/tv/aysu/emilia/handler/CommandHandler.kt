@@ -36,9 +36,6 @@ class CommandHandler(private val emilia: Emilia) : ListenerAdapter() {
             //send bot is thinking message
             event.deferReply(true)
 
-            //we can only reply once, but we can use this hook
-            val hook = event.hook
-
             //create callback
             val callback = CommandCallback(event)
 

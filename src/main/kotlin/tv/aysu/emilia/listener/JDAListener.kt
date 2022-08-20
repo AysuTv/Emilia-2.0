@@ -4,10 +4,10 @@ import net.dv8tion.jda.api.events.ReadyEvent
 import net.dv8tion.jda.api.hooks.ListenerAdapter
 import tv.aysu.emilia.Emilia
 
-class JDAListener : ListenerAdapter() {
+class JDAListener(private val emilia: Emilia) : ListenerAdapter() {
 
     override fun onReady(event: ReadyEvent) {
-        Emilia.instance.registerCommands()
+        emilia.commandHandler.acceptCommands()
     }
 
 }
